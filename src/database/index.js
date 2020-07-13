@@ -20,10 +20,7 @@ class Database {
         host: process.env.HOST_DB_CONFIG,
         dialect: process.env.DIALECT_DB_CONFIG,
         protocol: process.env.PROTOCOL_DB_CONFIG,
-        logging: true,
-        dialectOptions: {
-          ssl: true,
-        },
+
         pool: {
           max: 5,
           min: 0,
