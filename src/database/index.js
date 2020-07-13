@@ -12,22 +12,9 @@ class Database {
   }
 
   init() {
-    this.connection = new Sequelize(
-      process.env.DATABASE_NAME_DB_CONFIG,
-      process.env.USER_NAME_DB_CONFIG,
-      process.env.USER_PASSWORD_DB_CONFIG,
-      {
-        host: process.env.HOST_DB_CONFIG,
-        dialect: process.env.DIALECT_DB_CONFIG,
-        protocol: process.env.PROTOCOL_DB_CONFIG,
-
-        pool: {
-          max: 5,
-          min: 0,
-          idle: 10000,
-        },
-      }
-    );
+    this.connection = new Sequelize(process.env.DATABASE_URL, {
+      dialect: "postgres",
+    });
     models.map((model) => {
       model.init(this.connection);
     });
