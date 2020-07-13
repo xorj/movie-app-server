@@ -26,7 +26,7 @@ class SessionController {
     const { id, name } = user;
     return res.json({
       user: { id, name, email },
-      token: JWT.sign({ id }, authConfig.secret, {
+      token: JWT.sign({ id, name }, authConfig.secret, {
         expiresIn: authConfig.expiresIn,
       }),
     });

@@ -9,6 +9,7 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
+
       title: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -18,15 +19,21 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      user_id: {
+      user_name: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true,
+      },
+      user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       movie_id: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false,
-        unique: true,
+      },
+      rating: {
+        type: Sequelize.FLOAT,
+        allowNull: false,
       },
       //Preenchidos automaticamente
       created_at: {

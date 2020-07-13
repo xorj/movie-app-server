@@ -1,5 +1,5 @@
 import Sequelize, { Model } from "sequelize";
-class User extends Model {
+class Review extends Model {
   static init(sequelize) {
     super.init(
       {
@@ -7,7 +7,9 @@ class User extends Model {
         title: Sequelize.STRING,
         text: Sequelize.STRING,
         user_id: Sequelize.INTEGER,
+        user_name: Sequelize.STRING,
         movie_id: Sequelize.INTEGER,
+        rating: Sequelize.FLOAT,
       },
       {
         sequelize,
@@ -20,4 +22,4 @@ class User extends Model {
   }
 }
 
-export default User;
+export default Review;

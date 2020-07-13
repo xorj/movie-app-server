@@ -1,7 +1,5 @@
 "use strict";
 
-const { DataTypes } = require("sequelize");
-
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable("users", {
@@ -25,12 +23,16 @@ module.exports = {
         allowNull: false,
       },
       reviews: {
-        type: DataTypes.ARRAY(DataTypes.INTEGER),
-        allowNull: true,
+        type: Sequelize.ARRAY(Sequelize.INTEGER),
+        allowNull: false,
+
+        defaultValue: [],
       },
       watchlist: {
-        type: DataTypes.ARRAY(DataTypes.INTEGER),
-        allowNull: true,
+        type: Sequelize.ARRAY(Sequelize.INTEGER),
+        allowNull: false,
+
+        defaultValue: [],
       },
       //Preenchidos automaticamente
       created_at: {

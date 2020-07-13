@@ -4,11 +4,12 @@ class User extends Model {
   static init(sequelize) {
     super.init(
       {
-        //Não colocar colunas preenchidas automaticamente
         name: Sequelize.STRING,
         email: Sequelize.STRING,
         password: Sequelize.VIRTUAL,
         password_hash: Sequelize.STRING,
+        reviews: Sequelize.ARRAY(Sequelize.INTEGER),
+        watchlist: Sequelize.ARRAY(Sequelize.INTEGER),
       },
       {
         sequelize,
